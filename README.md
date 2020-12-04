@@ -1,4 +1,4 @@
-<h1>Blog-27 - A Blogging Site
+<h1>My Blog
 </h1>
 A Django-powered Blogging Site which allows users' to view posts and comment on it.
 
