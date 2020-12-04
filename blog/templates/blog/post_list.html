@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="centerstage">
+  {% for post in post_list %}
+    <div class="post">
+      <br>
+      <div style="border-radius: 30px; background-color:gainsboro; color:black; padding:20px; box-shadow:  0 0 10px  rgba(0,0,0,0.6);">
+        <h1><a class="heading" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+        <div class="date">
+          {% if post.published_date is null %}
+            <p><b>Created on:</b> {{post.create_date |date:"D M Y"}}</p>
+          {% else %}
+          <p><b>Published on:</b> {{post.published_date |date:"D M Y"}}</p>
+          {% endif %}
+        </div>
+        {% if post.published_date is not null %}
+        <a href="{% url 'post_detail' pk=post.pk %}" style="color:black">Comments: {{ post.approve_comments.count }}</a>
+        {% endif %}
+      </div>
+    </div><br>
+  {% endfor %}
+</div>
+{% endblock %}
