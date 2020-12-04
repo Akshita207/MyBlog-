@@ -6,8 +6,8 @@ from blog import views
 
 urlpatterns=[
     url(r'^$',views.PostListView.as_view(),name='post_list'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    url('login/', auth_views.LoginView.as_view(), name='login'),
+    url('logout/', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^sign_up/$',views.sign_up,name='sign-up'),
     url(r'^about/$',views.AboutView,name='about'),
     url(r'^post/(?P<pk>\d+)$',views.PostDetailView.as_view(),name='post_detail'),
