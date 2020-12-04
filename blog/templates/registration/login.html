@@ -2,8 +2,11 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<div class="jumbotron container centerstage" style="text-align: center;">
   <h2>Please login:</h2>
+  <hr class="solid">
+<br>
+<div class="boxed">
   {% if forms.errors %}
   <p>Your username and password didn't match! Please try again.</p>
   {% endif %}
@@ -11,9 +14,11 @@
   <form method="POST">
     {% csrf_token %}
       {{ form.as_p }}
-      <input type="submit" class = "btn btn-primary" value="Login">
+      <input type="submit" class = "btn btn-primary" value="Login"><br>
       <input type="hidden" name="next" value="{{next}}">
+      <br>
   </form>
+  </div>
 </div>
 
 {% endblock %}
