@@ -14,7 +14,7 @@
           {% endif %}
         </div>
         {% if post.published_date is not null %}
-        <a href="{% url 'post_detail' pk=post.pk %}" style="color:black">Comments: {{ post.approve_comments.count }}</a>
+        <a href="{% url 'post_detail' pk=post.pk %}" style="color:black">Comments: {{ post.comments.count }}</a>
         {% endif %}
       </div>
     </div><br>
