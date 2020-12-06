@@ -47,9 +47,6 @@
           <li>
             <a>Welcome: {{user.username}}</a>
           </li>
-            {% else %}
-            <li><a class="nav navbar-right" href="{% url 'login' %}"> Login</a></li>
-            <li><a href="{% url 'sign-up' %}">Register</a></li>
           {% endif %}
         </ul>
       </div>
